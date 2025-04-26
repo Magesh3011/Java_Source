@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+<!--     below bean dev creating the obj of the Dev class
+setter injection : <property name="age" value="25"></property> 
+     property is for setting value of the local variable
+Constructor injection : <constructor-arg index="0" value="25"></constructor-arg>
+             if the constructor will take multiple args, that time need to change the index num
+             
+ how to do this for the reference type,
+ step 1: create the bean for the class which is required 
+ taking this for eg:<bean id="test" class="com.spring.framework.core.Test"></bean>
+ 
+ the id we have to pass in the Dev class bean,
+                 
+ -->
+<bean id="dev" class="com.spring.framework.core.Dev">
+
+<!-- setter injection for the primitive type -->
+<!-- <property name="age" value="25"></property> -->
+
+<!-- constructor injection for the primitive type -->
+<!-- <constructor-arg index="0" value="25"></constructor-arg> -->
+
+<!-- setter injection for the ref type -->
+<!-- <property name="testBean" ref="test"></property> -->
+
+<!-- constructor injection for the primitive type -->
+<constructor-arg index="0" ref="test"></constructor-arg>
+
+</bean>
+
+
+<bean id="dev2" class="com.spring.framework.core.Dev"></bean>
+<bean id="test" class="com.spring.framework.core.Test"></bean>
+</beans>
