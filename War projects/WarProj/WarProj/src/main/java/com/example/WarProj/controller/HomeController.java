@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String home() {
-		return "Hello welcome to home page, deployed by jenkins";
+		return "home";
 	}
 }
